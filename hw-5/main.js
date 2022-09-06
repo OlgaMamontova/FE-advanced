@@ -16,6 +16,21 @@ function getAverage(...numbers){
     arrNumbers.forEach(number => sum += number);
     return sum / arguments.length;
 }
+//4 рахує медіану всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
+function getMedian(...numbers){
+    const arrNumbers = numbers.filter((number) => {
+        return Number.isInteger(number);
+    });    
+    arrNumbers.sort((a, b) => {
+        return a-b;
+    });
+    let halfLength = arrNumbers.length / 2;
+    if(arrNumbers.length%2){
+        return arrNumbers[halfLength - 0.5];
+    } else {
+        return (arrNumbers[halfLength - 1] + arrNumbers[halfLength]) / 2;
+    }
+}
 //5 фільтрує парні числа передані як аргументи функції
 function filterEvenNumbers(...numbers){
     const arrOddNumbers = numbers.filter(number => number%2 == 1);
@@ -45,9 +60,10 @@ function replaceBadWords(string){
     //В цьому завданні працює і без розкладання на масив і збирання назад в строку. Мабуть я не вірно зробила?
 }
 
-console.log(getRandomArray(15, 1, 100));
-console.log(getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
-console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6));
-console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6,));
-console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
-console.log(replaceBadWords("Are you fucking kidding? Holy shit! It's bullshit!"));
+console.log('#1: ' + getRandomArray(15, 1, 100));
+console.log('#3: ' + getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('#4: ' + getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('#5: ' + filterEvenNumbers(1, 2, 3, 4, 5, 6));
+console.log('#6: ' + countPositiveNumbers(1, -2, 3, -4, -5, 6,));
+console.log('#7: ' + getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('#8: ' + replaceBadWords("Are you fucking kidding? Holy shit! It's bullshit!"));
