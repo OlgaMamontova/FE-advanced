@@ -22,7 +22,7 @@ class Student {
     };
     getAverageMark(){
         if(this.allMarks.length > 0){
-            return this.allMarks.reduce((sum, mark) => sum += mark) / this.allMarks.length;
+            return this.allMarks.reduce((sum, mark) => sum += mark, 0) / this.allMarks.length;
         } else {
             return null;
         }
