@@ -1,43 +1,54 @@
-const keyA = new Audio("audio/keyA");
-const keyS = new Audio("audio/keyS");
-const keyD = new Audio("audio/keyD");
-const keyF = new Audio("audio/keyF");
-const keyG = new Audio("audio/keyG");
-const keyH = new Audio("audio/keyH");
-const keyJ = new Audio("audio/keyJ");
-const keyK = new Audio("audio/keyK");
-const keyL = new Audio("audio/keyL");
-
-
+let audio = new Audio();
 
 document.body.addEventListener("keydown", function (e){
-    switch(e.code) {
-        case "KeyA":
-            keyA.play();
-          break;
-          case "KeyS":
-            keyS.play();
-          break;
-          case "KeyD":
-            keyD.play();
-          break;
-          case "KeyF":
-            keyF.play();
-          break;
-          case "KeyG":
-            keyG.play();
-          break;
-          case "KeyH":
-            keyH.play();
-          break;
-          case "KeyJ":
-            keyJ.play();
-          break;
-          case "KeyK":
-            keyK.play();
-          break;
-          case "KeyL":
-            keyL.play();
-          break;
-      }
+  removeActive();        
+  let classCurrentKey = "key" + e.code.substr(-1);
+    if (document.querySelector(`.${classCurrentKey}`)) {
+      document.querySelector(`.${classCurrentKey}`).classList.add("active");
+      getAudioSrc(e);  
+      audio.play();
+    };       
 });
+
+document.querySelector('.container').addEventListener('click', function(e){
+    removeActive();    
+    if (e.target.classList.contains('key')) {
+      e.target.classList.add("active");
+      getAudioSrc(e);
+      audio.play();
+    }
+});
+
+function removeActive() {
+  document.querySelectorAll('div').forEach(div => div.classList.remove("active"));   
+};
+
+function getAudioSrc(e) {
+  if ((e.code == "KeyA") || (e.target.classList.contains("keyA"))) {
+    audio.src = "audio/keyA.mp3";
+  };
+  if ((e.code == "KeyS") || (e.target.classList.contains("keyS"))) {
+    audio.src = "audio/keyS.mp3";
+  };
+  if ((e.code == "KeyD") || (e.target.classList.contains("keyD"))) {
+    audio.src = "audio/keyD.mp3";
+  };
+  if ((e.code == "KeyF") || (e.target.classList.contains("keyF"))) {
+    audio.src = "audio/keyF.mp3";
+  };
+  if ((e.code == "KeyG") || (e.target.classList.contains("keyG"))) {
+    audio.src = "audio/keyG.mp3";
+  };
+  if ((e.code == "KeyH") || (e.target.classList.contains("keyH"))) {
+    audio.src = "audio/keyH.mp3";
+  };
+  if ((e.code == "KeyJ") || (e.target.classList.contains("keyJ"))) {
+    audio.src = "audio/keyJ.mp3";
+  };
+  if ((e.code == "KeyK") || (e.target.classList.contains("keyK"))) {
+    audio.src = "audio/keyK.mp3";
+  };
+  if ((e.code == "KeyL") || (e.target.classList.contains("keyL"))) {
+    audio.src = "audio/keyL.mp3";
+  };
+};
