@@ -9,4 +9,4 @@ async function getRandomChinese(length){
   return word;
 };
 
-console.log(getRandomChinese(6));
+getRandomChinese(4).then(res => console.log(res));
