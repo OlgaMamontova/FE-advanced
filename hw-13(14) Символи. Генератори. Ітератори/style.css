@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(243, 242, 242);
+}
+.container{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 40px;
+}
+.text{
+    font-size: 14px;
+    margin: 20px;
+}
+.button{
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(51, 167, 235);
+    cursor: pointer;
+    color: white;
+    margin: 0 20px;
+}
+.button:hover{
+    background-color: rgb(51, 207, 235);
+}
