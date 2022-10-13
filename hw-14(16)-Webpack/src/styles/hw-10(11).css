@@ -1,0 +1,39 @@
+.hw-10{
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    margin: 0;
+    background-size: cover !important;
+    background-position: center center;
+}
+.hw-10 .container{
+    max-width: 1024px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hw-10 h3{
+    color:#fff;
+}
+.key{
+    width: 100px;
+    height: 70px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    border: 4px solid black;
+    border-radius: 4px;
+}
+.key.active{
+    background: rgba(0,0,0,0.3);
+    transform: scale(1.1);
+    border-color: rgb(163, 23, 23);
+}
